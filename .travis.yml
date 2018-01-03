@@ -23,10 +23,11 @@ after_script:
   - echo $(pwd)
   - echo "wwww" > aaa.txt
   - echo $(ls -l)
+  - cd ..\
   - git init
   - git config user.name "freeeyes"
   - git config user.email "freeeyes@163.com"
-  - git add ./test
+  - git add ..\test\*.txt
   - git commit -m "[ci skip]Update test"
   - git push -f "https://${GH_TOKEN}@${GH_REF}" HEAD:master
 
