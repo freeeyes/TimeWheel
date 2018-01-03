@@ -1,0 +1,32 @@
+sudo: required
+dist: trusty
+group: deprecated-2017Q4
+language: cpp
+os:
+  - linux
+
+compiler:
+  - gcc
+
+branches:
+  only:
+  - master
+
+env:
+  global:
+    - GH_REF: github.com/freeeyes/TimeWheel.git
+    - secure: "p3Ycp+iwi2N52fYC99LGE3FKrtaQDOJRxSyFWaFLQKwFVX5VI58gS6S69Wr6TQCKMkbpcXWc/poEkhWm7QlDeoRsW1PyA/RvunFEO4YyZr0IR7Orsuo/fLmKUZBalSMnDa6dZyi2jS6PPPGwCOP3kJ7Cj0hLj66fVg0TKWhOWKDPoJ8wk8sBcZTlNIQRN5axgyqmWnBO7CRaUEF6QHHz4Z8Nzl5cQZZHmqfaXa2j3NlEjoy3Cyz1CWV1pXtlpD6aMy9xIyQIwPOOwyUwK/BFwdNQG37yPgTIxsYGTb4GOFYUM0Br3V+TgA+gy5QLDhE5JVqUmIl2tbB5J99BgbVDLJyoR6AFyNYMKQhwNkKmSq+ShVBaFTcMjeOiMcWDnQ8Q+79EUZaEI451mLn9e8PczRJKPPNy+Osrp+EvL9ielcHXb4lDw92+2DIz4LxKSJ0y+IwcwxxZiXCqugys5mxL+2port+bYTReS60m4u/xU6CDfOfmm+ZwnkLY0K7Fv23mVXmRPw4JigXmUNFsVlJWUHvTPQVninar2/xEy4GDnl3A/DSAPGXjaVVyrsrKe33JVmm2paBvodj2lBX/WD0ogq6UP6M12cB+lX1QbMy6BZnVELECFCQKUt95idz9OdPZHztpmwu+zJZl9W7BC665ma9diUJdJY43DLIaPvBMkUE="
+    
+after_script:
+  - mkdir test
+  - cd test
+  - echo $(pwd)
+  - echo "wwww" > aaa.txt
+  - echo $(ls -l)
+  - git init
+  - git config user.name "freeeyes"
+  - git config user.email "freeeyes@163.com"
+  - git add ./test
+  - git commit -m "[ci skip]Update test"
+  - git push -f "https://${GH_TOKEN}@${GH_REF}" HEAD:master
+
