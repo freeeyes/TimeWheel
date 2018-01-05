@@ -1,8 +1,3 @@
- <style type="text/css">
- .normal{background-color:#C1FFC1;color:Black;}
- .error{background-color:#CD5C5C;color:Black;}
- </style>
-
  <table border="1" cellpadding="10">
    <tr>
      <th>TestName</th>
