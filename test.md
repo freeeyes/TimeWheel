@@ -1,13 +1,8 @@
-<html>
- <head>
  <style type="text/css">
  .normal{background-color:#C1FFC1;color:Black;}
  .error{background-color:#CD5C5C;color:Black;}
  </style>
- <title>Test Result</title>
- </head>
- 
- <body>
+
  <table border="1" cellpadding="10">
    <tr>
      <th>TestName</th>
@@ -49,5 +44,3 @@
 <td>[s][127.0.0.1:10002]success.</td>
 <td>19.874001ms</td>
  </table>
- </body>
- </html>
